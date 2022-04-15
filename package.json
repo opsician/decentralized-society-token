@@ -1,15 +1,12 @@
 {
-  "name": "solid",
+  "name": "decentralized-society-token",
   "version": "1.0.0",
-  "description": "Solid Template",
-  "author": "Pasquale Vitiello <pasqualevitiello@gmail.com>",
+  "description": "Decentralized Society Token Landing Page",
+  "author": "opsician@protonmail.com",
   "license": "GPLv3",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/pasqualevitiello/solid.git"
-  },
-  "bugs": {
-    "url": "https://bitbucket.org/pasqualevitiello/solid/issues"
+    "url": "https://github.com/opsician/decentralized-society-token.git"
   },
   "scripts": {
     "clean": "rimraf dist/{css/*,js/*,images/*}",
