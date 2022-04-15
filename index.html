@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solid Template</title>
+    <title>Decentralized Society Token (DST)</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
 	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script src="src/js/claimToken.js"></script>
 </head>
 <body class="is-boxed has-animations">
     <div class="body-wrap">
@@ -31,9 +33,12 @@
                 <div class="container">
                     <div class="hero-inner">
 						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0">Landing template for startups</h1>
-	                        <p class="hero-paragraph">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
-	                        <div class="hero-cta"><a class="button button-primary" href="#">Pre order now</a><a class="button" href="#">Get in touch</a></div>
+	                        <h1 class="hero-title mt-0">Decentralized social communication for all</h1>
+	                        <p class="hero-paragraph">Decentralized Society Token (DST) is a utility token created for the purpose of being used on the DSociety platform.</p>
+	                        <div class="hero-cta">
+                                <a class="button button-primary" onclick="claimToken()">Claim Tokens</a>
+                                <!-- <a class="button" href="#">Contract Info</a> -->
+                            </div>
 						</div>
 						<div class="hero-figure anime-element">
 							<svg class="placeholder" width="528" height="396" viewBox="0 0 528 396">
@@ -63,8 +68,8 @@
                                     <div class="feature-icon">
 										<img src="dist/images/feature-icon-01.svg" alt="Feature 01">
                                     </div>
-                                    <h4 class="feature-title mt-24">Be Productive</h4>
-                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
+                                    <h4 class="feature-title mt-24">Transparent</h4>
+                                    <p class="text-sm mb-0">All transactions occur on the blockchain and are viewable by anyone at anytime.</p>
                                 </div>
                             </div>
 							<div class="feature text-center is-revealing">
@@ -72,8 +77,8 @@
                                     <div class="feature-icon">
 										<img src="dist/images/feature-icon-02.svg" alt="Feature 02">
                                     </div>
-                                    <h4 class="feature-title mt-24">Be Productive</h4>
-                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
+                                    <h4 class="feature-title mt-24">Fast</h4>
+                                    <p class="text-sm mb-0">DST is a token on the Avalanche blockchain which is known for its record transactions speeds and time to finality.</p>
                                 </div>
                             </div>
                             <div class="feature text-center is-revealing">
@@ -81,35 +86,8 @@
                                     <div class="feature-icon">
 										<img src="dist/images/feature-icon-03.svg" alt="Feature 03">
                                     </div>
-                                    <h4 class="feature-title mt-24">Be Productive</h4>
-                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
-                                </div>
-                            </div>
-                            <div class="feature text-center is-revealing">
-                                <div class="feature-inner">
-                                    <div class="feature-icon">
-										<img src="dist/images/feature-icon-04.svg" alt="Feature 04">
-                                    </div>
-                                    <h4 class="feature-title mt-24">Be Productive</h4>
-                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
-                                </div>
-                            </div>
-							<div class="feature text-center is-revealing">
-                                <div class="feature-inner">
-                                    <div class="feature-icon">
-										<img src="dist/images/feature-icon-05.svg" alt="Feature 05">
-                                    </div>
-                                    <h4 class="feature-title mt-24">Be Productive</h4>
-                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
-                                </div>
-                            </div>
-                            <div class="feature text-center is-revealing">
-                                <div class="feature-inner">
-                                    <div class="feature-icon">
-										<img src="dist/images/feature-icon-06.svg" alt="Feature 06">
-                                    </div>
-                                    <h4 class="feature-title mt-24">Be Productive</h4>
-                                    <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
+                                    <h4 class="feature-title mt-24">Inexpensive</h4>
+                                    <p class="text-sm mb-0">Avalanche is also known for its low average gas costs.</p>
                                 </div>
                             </div>
                         </div>
@@ -121,48 +99,61 @@
                 <div class="container-sm">
                     <div class="pricing-inner section-inner">
                         <div class="pricing-header text-center">
-                            <h2 class="section-title mt-0">Unlimited for all</h2>
-                            <p class="section-paragraph mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad quis nostrud.</p>
+                            <h2 class="section-title mt-0">Tokenomics</h2>
+                            <p class="section-paragraph mb-0">Equal opportunity for everyone.</p>
+                            <p class="section-paragraph mb-0">Decentralized Society Token is used only as a utility token on the DSociety Dapps. Used tokens are removed from circulation by being sent to the contract addresses and unable to be withdrawn.
+Tokens are earned throught a faucet which provides free tokens for use on the DSociety platform at a claim rate of 0.1 tokens per day.</p>
                         </div>
 						<div class="pricing-tables-wrap">
                             <div class="pricing-table">
                                 <div class="pricing-table-inner is-revealing">
                                     <div class="pricing-table-main">
-                                        <div class="pricing-table-header pb-24">
+                                        <!-- <div class="pricing-table-header pb-24">
                                             <div class="pricing-table-price"><span class="pricing-table-price-currency h2">$</span><span class="pricing-table-price-amount h1">49</span><span class="text-xs">/month</span></div>
-                                        </div>
-										<div class="pricing-table-features-title text-xs pt-24 pb-24">What you will get</div>
+                                        </div> -->
+										<!-- <div class="pricing-table-features-title text-xs pt-24 pb-24">What you will get</div> -->
                                         <ul class="pricing-table-features list-reset text-xs">
                                             <li>
-                                                <span>Lorem ipsum dolor sit nisi</span>
+                                                <span>Name: Decentralized Society Token</span>
                                             </li>
                                             <li>
-                                                <span>Lorem ipsum dolor sit nisi</span>
+                                                <span>Symbol: DST</span>
                                             </li>
                                             <li>
-                                                <span>Lorem ipsum dolor sit nisi</span>
+                                                <span>Type: ERC20</span>
                                             </li>
 											<li>
-												<span>Lorem ipsum dolor sit nisi</span>
+												<span>Expiration: none</span>
+											</li>
+											<li>
+												<span>Contract: <a href="https://testnet.snowtrace.io/address/0x3e6bfDb3ec7aA5dd0F0C10d57C7b24E27C00a632">View</a></span>
+											</li>
+											<li>
+												<span>Max Supply: 100,000,000</span>
+											</li>
+											<li>
+												<span>Decimals: 18</span>
+											</li>
+											<li>
+												<span>Blockchain: AVAX Fuji C-Chain</span>
 											</li>
                                         </ul>
                                     </div>
-                                    <div class="pricing-table-cta mb-8">
+                                    <!-- <div class="pricing-table-cta mb-8">
                                         <a class="button button-primary button-shadow button-block" href="#">Pre order now</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
 			<section class="cta section">
 				<div class="container">
 					<div class="cta-inner section-inner">
-						<h3 class="section-title mt-0">Still not convinced on buying?</h3>
+						<h3 class="section-title mt-0">Would you like to chat?</h3>
 						<div class="cta-cta">
-							<a class="button button-primary button-wide-mobile" href="#">Get in touch</a>
+							<a class="button button-primary button-wide-mobile" target="_blank" href="https://opsician.github.io/decentralized-society-chat/">Chat Now</a>
 						</div>
 					</div>
 				</div>
