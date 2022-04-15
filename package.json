@@ -46,6 +46,6 @@
     "stylelint": "^9.4.0",
     "uglify-es": "^3.3.10"
   },
-  "homepage": "https://bitbucket.org/pasqualevitiello/solid#readme",
+  "homepage": "https://github.com/opsician/decentralized-society-token",
   "main": ".eslintrc.js"
 }
